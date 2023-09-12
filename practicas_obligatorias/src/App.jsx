@@ -13,13 +13,17 @@ function App() {
     { brand: `KFC`, income: 1098463 },
   ];
 
-  const initialValue = 0;
-  const avgNetIncomes =
-    netIncomes.reduce(
-      (acc, currentValue) => acc + currentValue.income,
-      initialValue
-    ) / netIncomes.length;
-  console.log(avgNetIncomes);
+  const calculateAvgNetIncomes = (incomes) => {
+    const initialValue = 0;
+    return (
+      incomes.reduce(
+        (acc, currentValue) => acc + currentValue.income,
+        initialValue
+      ) / incomes.length
+    );
+  };
+
+  const avgNetIncomes = calculateAvgNetIncomes(netIncomes);
 
   return (
     <>
