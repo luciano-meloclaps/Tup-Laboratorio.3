@@ -12,7 +12,7 @@ const ButtonRandom = () => {
     <Button
       onClick={clickButton}
       variant="outline-secondary"
-      className="fa fa-linkedin-square"
+      className="fa fa-linkedin-square mb-5"
       aria-hidden="true"
     >
       Afuera: {incButton}

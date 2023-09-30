@@ -1,8 +1,11 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import ButtonRandom from "./components/Button/Button";
-import "./App.css";
-import Tables from "./components/table/Tables";
 import { useState } from "react";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+import ButtonRandom from "./components/Button/Button";
+import Tables from "./components/table/Tables";
+import Login from "./components/login/Login";
 
 function App() {
   const [setIncButton] = useState(0);
@@ -29,6 +32,7 @@ function App() {
     <>
       <Tables netIncomes={netIncomes} avgNetIncomes={avgNetIncomes} />
       <ButtonRandom {...setIncButton} />
+      <Login />
     </>
   );
 }
