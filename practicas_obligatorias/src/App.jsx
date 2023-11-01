@@ -3,7 +3,7 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import ButtonRandom from "./components/Button/Button";
+import ButtonRandom from "./components/button/Button";
 import Tables from "./components/table/Tables";
 import Login from "./components/login/Login";
 

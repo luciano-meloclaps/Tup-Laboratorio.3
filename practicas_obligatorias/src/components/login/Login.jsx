@@ -1,32 +1,44 @@
 import React from "react";
-import { Button, Form } from "react-bootstrap";
-
-const buttonRegistrarion = () => {
-  const [verifyRegistration, setVerifyRegistration] = useState(0);
-};
-
-const aler = () => {
-  alert("sas");
-};
+import { Button } from "react-bootstrap";
+import { useState } from "react";
 
 const Login = () => {
+  const [verifyRegistration, setVerifyRegistration] = useState("");
+
+  const handleChangeReg = (event) => {
+    const value = event.target.value;
+    setVerifyRegistration(value);
+  };
+
+  /* validationFn = () => {
+
+    if(assa)
+
+    else {
+      alert("¡Usuario registrado correctamente!");
+    }
+  };*/
   return (
     <div>
       <div class="input-group mb-3">
         <span class="input-group-text bg-dark text-white" id="basic-addon1">
-          @
+          @ Username
         </span>
         <input
-          type="text"
           class="form-control bg-dark text-white"
           placeholder="Username"
-          aria-label="Username"
-          aria-describedby="basic-addon1"
+          type="text"
+          value={verifyRegistration}
+          onChange={handleChangeReg}
         ></input>
       </div>
-      <Button onClick={aler} variant="outline-secondary">
+      <Button
+        /*onClick={}*/
+        variant="outline-secondary"
+      >
         Registrarse
       </Button>{" "}
+      <p class="text-white m-4">Valor ingresado: {verifyRegistration} </p>
     </div>
   );
 };
