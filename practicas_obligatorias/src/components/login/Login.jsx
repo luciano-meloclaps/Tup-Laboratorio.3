@@ -8,16 +8,24 @@ const Login = () => {
   const handleChangeReg = (event) => {
     const value = event.target.value;
     setVerifyRegistration(value);
+
+    if (value.includes("o") || value.includes("O")) {
+      alert("Por favor, ¡Nombres de usuario sin la letra o!");
+    }
   };
 
-  /* validationFn = () => {
-
-    if(assa)
-
-    else {
+  const handleClickReg = () => {
+    if (
+      verifyRegistration === "" ||
+      verifyRegistration.includes("o") ||
+      verifyRegistration.includes("O")
+    ) {
+      alert("Usuario inválido para registrarse");
+    } else {
       alert("¡Usuario registrado correctamente!");
     }
-  };*/
+  };
+
   return (
     <div>
       <div class="input-group mb-3">
@@ -32,13 +40,11 @@ const Login = () => {
           onChange={handleChangeReg}
         ></input>
       </div>
-      <Button
-        /*onClick={}*/
-        variant="outline-secondary"
-      >
+      <Button onClick={handleClickReg} variant="outline-secondary">
         Registrarse
-      </Button>{" "}
-      <p class="text-white m-4">Valor ingresado: {verifyRegistration} </p>
+      </Button>
+      {""}
+      <p class="text-white m-4">Valor ingresado:{verifyRegistration} </p>
     </div>
   );
 };
